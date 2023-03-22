@@ -48,10 +48,12 @@ const App = () => {
             <ThemeProvider theme={customTheme}>
             <Container {...containerProps}>
 
-            <BrowserRouter basename={'/places-tracker'}>
+            {/*<BrowserRouter basename={'/places-tracker'}>*/}
+            <BrowserRouter basename={'/daily-dishes'}>
                 <Route exact path={'/'}>
                     <Suspense fallback={''}>
-                        <Portal width={width} height={height}/>
+                        {/*<Portal width={width} height={height}/>*/}
+                        <div>hereeeee</div>
                     </Suspense>
                 </Route>
                 {/*Replace for a comparison tool site ?*/}
@@ -76,14 +78,9 @@ const App = () => {
                         <Login />
                     </Suspense>
                 </Route>
-                <Route path={'/new-place'}>
+                <Route path={'/new-dish'}>
                     <Suspense fallback={''}>
                         <NewPlace />
-                    </Suspense>
-                </Route>
-                <Route path={'/recent'}>
-                    <Suspense fallback={''}>
-                        <p>It's gonna be like portal (for mobile versions only) once I refactor Recent component into a reusable one</p>
                     </Suspense>
                 </Route>
                 <Route path={'/configuration'}>
