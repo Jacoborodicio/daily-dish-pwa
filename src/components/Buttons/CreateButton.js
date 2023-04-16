@@ -29,7 +29,7 @@ const CreateButton = () => {
     const textColor = text.secondary;
     return (
             <ButtonContainer onClick={() => history.push('/new-place')}>
-            <FontAwesomeIcon icon={faStreetView} size={2} color={textColor} />
+            <FontAwesomeIcon icon={faStreetView} size={"xs"} color={textColor} />
             <span className={'plusIcon'}>+</span>
         </ButtonContainer>
     )

@@ -1,3 +1,8 @@
+export const baseApiUrl = 'http://localhost:8000/';
+export const api = {
+    login: `${baseApiUrl}users/login`,
+    dishes: `${baseApiUrl}dishes/`
+}
 export const mainTopics = [
     {
         id: 1,

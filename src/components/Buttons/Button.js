@@ -5,6 +5,7 @@ import {styled} from "@mui/material";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAngleDoubleLeft} from "@fortawesome/free-solid-svg-icons/faAngleDoubleLeft";
 import {useHistory} from "react-router-dom";
+import PropTypes from "prop-types";
 
 const StyledButton = styled('button')`
   all: unset;
@@ -25,19 +26,23 @@ const StyledButton = styled('button')`
     transform: scale(1.1);
   }
 `;
-const Button = ({children, icon, back, title, link, secondary, onClick}) => {
+const Button = ({children, icon, back, title, link, secondary, onClick, type, style}) => {
     const history = useHistory();
     const handleClick = () => {
         onClick && onClick();
         back ? history.push('/') : link ? history.push(link) : null;
     }
     return (
-        <StyledButton onClick={handleClick} secondary={secondary}>
+        <StyledButton type={type} onClick={handleClick} secondary={secondary} style={style}>
             {back ? (<FontAwesomeIcon icon={faAngleDoubleLeft} color={'#90DCB3'}/>) : icon ? {icon} : null}
             {title && <p>{title}</p>}
             <p>{children}</p>
         </StyledButton>
     )
 }
-
+Button.propTypes = {
+    type: PropTypes.string,
+    style: PropTypes.object,
+}
+Button.defaultProps = {type: 'button'}
 export default Button;

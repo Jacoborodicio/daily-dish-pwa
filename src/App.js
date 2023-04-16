@@ -53,7 +53,7 @@ const App = () => {
                 <Route exact path={'/'}>
                     <Suspense fallback={''}>
                         {/*<Portal width={width} height={height}/>*/}
-                        <div>hereeeee</div>
+                        <Login />
                     </Suspense>
                 </Route>
                 {/*Replace for a comparison tool site ?*/}

@@ -15,16 +15,10 @@ const developConfig = {
             directory: path.join(__dirname, '../dist'),
             publicPath: '/',
         },
-            // {
-            //     directory: path.join(__dirname, '../public'),
-            //     publicPath: '/'
-            // }
             ],
         historyApiFallback: true,
         compress: true,
         hot: true
-        // open: "chrome" // To open the browser directly
-
     },
     target: "web",
     plugins: [
